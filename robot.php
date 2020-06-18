@@ -5,25 +5,69 @@ require __DIR__ . '/vendor/autoload.php';
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
+/**
+ * Interface cleanable
+ */
 interface cleanable
-{
+{    
+    /**
+     * clean
+     *
+     * @return void
+     */
     public function clean() : void;
 }
 
+/**
+ * Interface chargable
+ */
 interface chargable
-{
+{    
+    /**
+     * charge
+     *
+     * @return void
+     */
     public function charge() : void;
 }
 
+/**
+ * Interface Machine
+ */
 interface Machine extends cleanable,chargable
 {
 }
 
+/**
+ * Robot
+ */
 class Robot implements Machine
-{
-    public $log;
-    public $floor;
-    public $area;
+{    
+    /**
+     * log
+     *
+     * @var mixed
+     */
+    public $log;    
+    /**
+     * floor
+     *
+     * @var mixed
+     */
+    public $floor;    
+    /**
+     * area
+     *
+     * @var mixed
+     */
+    public $area;    
+    /**
+     * __construct
+     *
+     * @param  mixed $floor
+     * @param  mixed $area
+     * @return void
+     */
     public function __construct($floor, $area)
     {
         $this->floor = $floor;
@@ -33,7 +77,12 @@ class Robot implements Machine
         $this->log->pushHandler(new StreamHandler('logs/log-'.date('d-m-y-h-i-s').'.log', Logger::DEBUG));
         $this->log->addInfo('Robot started and battery indicates charging 100%');
     }
-
+    
+    /**
+     * clean
+     *
+     * @return void
+     */
     public function clean(): void
     {
         $this->log->addInfo('floor '.$this->floor.' has '.$this->area.' tiles and each one have size of 1m X 1m');
@@ -51,7 +100,12 @@ class Robot implements Machine
             }
         }
     }
-
+    
+    /**
+     * charge
+     *
+     * @return void
+     */
     public function charge(): void
     {
         $this->log->addInfo('Robot charging started and it tooks 30 seconds!!');
