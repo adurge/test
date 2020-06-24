@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace test;
+namespace RobotCleaning;
 
-require_once('src/CleanableInterface.php');
-require_once('src/ChargableInterface.php');
-require_once('src/Apartment.php');
-require_once('src/Hardfloorapartment.php');
-require_once('src/Carpetfloorapartment.php');
+require __DIR__ . '/vendor/autoload.php';
+
+use RobotCleaning\src\Chargable as Chargable;
+use RobotCleaning\src\Hardfloorapartment as Hardfloorapartment;
+use RobotCleaning\src\Carpetfloorapartment as Carpetfloorapartment;
 
 /**
  * Robot

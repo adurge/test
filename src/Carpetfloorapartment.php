@@ -1,6 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace test;
+namespace RobotCleaning\src;
+
+use RobotCleaning\src\Cleanable as Cleanable;
 
 /**
  * Class Carpetfloorapartment

@@ -1,4 +1,22 @@
 {
+    "name": "test/robot",
+    "description": "Robot to clean 2 apartments. The first apartment has a 70 m2 hard floor. The second apartment has a 60 m2 carpeted floor. The robot should charge its battery itself once it runs out of energy",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Amit Durge",
+            "email": "adurge@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/Apartment.php",
+            "src/Carpetfloorapartment.php",
+            "src/Hardfloorapartment.php",
+            "src/CleanableInterface.php",
+            "src/ChargableInterface.php"
+        ]
+    },
 	"require": {
         "monolog/monolog": "1.0.*"
     },

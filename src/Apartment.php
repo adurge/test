@@ -1,9 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace test;
+namespace RobotCleaning\src;
 
-require __DIR__ . '/../vendor/autoload.php';
-
+use RobotCleaning\Robot as Robot;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
